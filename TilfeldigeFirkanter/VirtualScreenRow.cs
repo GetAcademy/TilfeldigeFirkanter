@@ -3,20 +3,20 @@ using System.Linq;
 
 namespace TilfeldigeFirkanter
 {
-    public class ScreenRow
+    public class VirtualScreenRow
     {
-        private ScreenCell[] _cells;
+        private VirtualScreenCell[] _cells;
         private int _width;
         private int _startX;
 
-        public ScreenRow(int width, int startX)
+        public VirtualScreenRow(int width, int startX)
         {
             _startX = startX;
             _width = width;
-            _cells = new ScreenCell[width];
+            _cells = new VirtualScreenCell[width];
             for (int i = 0; i < width; i++)
             {
-                _cells[i] = new ScreenCell();
+                _cells[i] = new VirtualScreenCell();
             }
         }
 
