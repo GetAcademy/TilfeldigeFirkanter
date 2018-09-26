@@ -2,16 +2,16 @@
 
 namespace TilfeldigeFirkanter
 {
-    public class Screen
+    public class VirtualScreen
     {
-        private ScreenRow[] _rows;
+        private VirtualScreenRow[] _rows;
 
-        public Screen(int width, int height)
+        public VirtualScreen(int width, int height)
         {
-            _rows = new ScreenRow[height];
+            _rows = new VirtualScreenRow[height];
             for (int i = 0; i < height; i++)
             {
-                _rows[i] = new ScreenRow(width, 1);
+                _rows[i] = new VirtualScreenRow(width, 1);
             }
         }
 

@@ -1,6 +1,6 @@
 ﻿namespace TilfeldigeFirkanter
 {
-    public class ScreenCell
+    public class VirtualScreenCell
     {
         public bool Up { get; private set; }
         public bool Down { get; private set; }
