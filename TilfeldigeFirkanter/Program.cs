@@ -8,37 +8,39 @@ namespace TilfeldigeFirkanter
 {
     class Program
     {
+        private static int _width = 40;
+        private static int _height = 20;
+
         static void Main(string[] args)
         {
+            while (true)
+            {
+                var boxes = CreateBoxes();
+                Show(boxes);
+                Console.WriteLine("(press enter for new. ctrl+c=exit)");
+                Console.ReadLine();
+            }
+        }
+
+        private static Box[] CreateBoxes()
+        {
             var random = new Random();
-            var box1 = new Box(random, 40, 18 );
-            var box2 = new Box(random, 40, 18 );
-            var screen = new VirtualScreen(50, 20);
-            screen.Add(box1);
-            screen.Add(box2);
+            var boxes = new Box[3];
+            for (var i = 0; i < boxes.Length; i++)
+            {
+                boxes[i] = new Box(random, _width, _height - 1);
+            }
+            return boxes;
+        }
+
+        private static void Show(Box[] boxes)
+        {
+            var screen = new VirtualScreen(_width, _height - 1);
+            foreach (var box in boxes)
+            {
+                screen.Add(box);
+            }
             screen.Show();
-
-            //Console.WriteLine(box.X);
-            //Console.WriteLine(box.Y);
-            //Console.WriteLine(box.Width);
-            //Console.WriteLine(box.Height);
-
-
-            //var cell = new ScreenCell();
-            //cell.AddLowerLeftCorner();
-            //cell.AddVertical();
-            //var row = new ScreenRow(20, 10);
-            //row.AddBoxTopRow();
-            //row.Show();
-            //Console.WriteLine();
-            //row = new ScreenRow(20, 10);
-            //row.AddBoxMiddleRow();
-            //row.Show();
-            //Console.WriteLine();
-            //row = new ScreenRow(20, 10);
-            //row.AddBoxBottomRow();
-            //row.Show();
-            //Console.WriteLine();
         }
     }
 }
