@@ -4,14 +4,14 @@ namespace TilfeldigeFirkanter
 {
     public class VirtualScreen
     {
-        private VirtualScreenRow[] _rows;
+        private readonly VirtualScreenRow[] _rows;
 
         public VirtualScreen(int width, int height)
         {
             _rows = new VirtualScreenRow[height];
             for (int i = 0; i < height; i++)
             {
-                _rows[i] = new VirtualScreenRow(width, 1);
+                _rows[i] = new VirtualScreenRow(width);
             }
         }
 
