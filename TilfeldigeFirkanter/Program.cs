@@ -28,14 +28,14 @@ namespace TilfeldigeFirkanter
             var boxes = new Box[3];
             for (var i = 0; i < boxes.Length; i++)
             {
-                boxes[i] = new Box(random, _width, _height - 1);
+                boxes[i] = new Box(random, _width, _height);
             }
             return boxes;
         }
 
         private static void Show(Box[] boxes)
         {
-            var screen = new VirtualScreen(_width, _height - 1);
+            var screen = new VirtualScreen(_width, _height);
             foreach (var box in boxes)
             {
                 screen.Add(box);
